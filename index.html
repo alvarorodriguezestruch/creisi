@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My mundo today</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="overflow-x:hidden;overflow-y:scroll;">
+ <div id="backdropSeleccion" style="position:fixed;height:100%;width:100%;opacity:0.6;background-color:#000;z-index:1040;display:none;"></div>
+ <div style="position:relative">
+    <div class="col-lg-12" align="center" style="background-color:#FFF;width:100%;height:100%">
+       <img class="loaded imgMundo" onload="this.style.opacity='1';this.style.width='500px';this.style.height='250px';"  class="img-responsive" src="http://www.emtstatic.com/2015/04/elmundotoday-logo1.png">
+      <div id="filaNot" class="row animated bounceInUp" >  
+        <div id="not1" class="col-lg-3 col-lg-offset-0 col-xs-10 col-xs-offset-2 noti" style="position:relative;overflow:hidden;height:400px;">
+          <div class="m-b-sm">
+            <img alt="image" class="img-circle img-responsive" style="width:200px;height:200px" src="http://www.hictus.es/images/img1.jpg">
+          </div>
+          <hr>
+          <p style="position:relative;width:70%;font-weight:900;">Los actores de Avatar esperan que se estrene una película sobre Los Pitufos para volver a tener trabajo</p>
+          <div class="divBtn"><button class="btn btn-danger" onClick="javascript:cargaNoticia('noti1.html');"><i class="fa fa-eye"></i> Ver</button></div>
+        </div>
+        <div id="not2" class="col-lg-3 col-lg-offset-1 col-xs-10 col-xs-offset-2 noti" style="position:relative;overflow:hidden;height:400px;">
+          <div class="m-b-sm">
+            <img alt="image" class="img-circle img-responsive" style="width:200px;height:200px" src="http://www.hictus.es/images/img2.jpg">
+          </div>
+          <hr>
+          <p style="position:relative;width:70%;font-weight:900;">El Ayuntamiento de Madrid prohíbe circular a los conductores del Partido Popular</p>
+          <div class="divBtn"><button class="btn btn-danger" onClick="javascript:cargaNoticia('noti2.html');"><i class="fa fa-eye"></i> Ver</button></div>
+        </div>
+        <div id="not3" class="col-lg-3 col-lg-offset-1 col-xs-10 col-xs-offset-2 noti" style="position:relative;overflow:hidden;height:400px;">
+          <div class="m-b-sm">
+            <img alt="image" class="img-circle img-responsive" style="width:200px;height:200px" src="http://www.hictus.es/images/img3.jpg">
+          </div>
+          <hr>
+          <p style="position:relative;width:70%;font-weight:900;">Facebook obligará a los catalanes a “compartir estado”</p>
+          <div class="divBtn"><button class="btn btn-danger" onClick="javascript:cargaNoticia('noti3.html');"><i class="fa fa-eye"></i> Ver</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal inmodal" id="divCombo" tabindex="-1" role="dialog" aria-hidden="true" style="overflow-y: hidden"></div>
+  <script>
+	setTimeout(function(){$("#filaNot").css("top","0px");},500);
+	function cargaNoticia(url){
+		$(document).ready(function() {
+			$.get(url).success(function(data) {
+					 $("#divCombo").html(data);
+					 $("#backdropSeleccion").show();
+				 });
+			/*$("#divCombo").load(url, function() {
+				$("#divCombo").show();
+				$("#backdropSeleccion").show();
+			});*/
+		});
+	}
+  </script>
+</body>
+
+</html>
