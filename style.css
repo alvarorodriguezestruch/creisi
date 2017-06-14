@@ -1,0 +1,57 @@
+
+body {
+	 overflow:hidden;
+}
+
+.imgMundo {
+  position:relative
+  opacity:0;
+  width:800px;
+  height:400px;
+  margin-top:25%
+  -moz-transition: opacity 2s, width 2s, height 2s; /* Firefox 4 */
+  -webkit-transition: opacity 2s, width 2s, height 2s;
+  -o-transition: opacity 2s, width 2s, height 2s;
+  transition: opacity 2s, width 2s, height 2s;
+}
+
+#filaNot {
+  position:relative;
+  margin-left:8%;
+  width:90%;
+  height:50%;
+  top:1000px;
+  -moz-transition:  top 2s; /* Firefox 4 */
+  -webkit-transition:  top 2s;
+  -o-transition:  top 2s;
+  transition: top 2s;
+ 
+}
+
+.noti {
+  
+  border:1px solid #CCC;
+  border-top:3px solid #e50000;
+  padding:10px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  
+}
+
+.divBtn {
+	position:absolute;
+	bottom:5px;
+	left:40%;
+}
+
+.btn {
+    border-radius: 3px;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
